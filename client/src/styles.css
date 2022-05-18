@@ -37,6 +37,10 @@ body {
   background-color: var(--primary-blue-light);
 }
 
+.location-path-name {
+  display: none;
+}
+
 /***************************************************************************************/
 /* Navbar */
 header {

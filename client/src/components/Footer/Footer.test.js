@@ -7,7 +7,7 @@ import { MemoryRouter } from "react-router-dom";
 describe("Navbar", () => {
   test("Renders the Footer", () => {
     render(<Footer />, { wrapper: MemoryRouter });
-    const footer = screen.getAllByRole("footer");
+    const footer = screen.getByLabelText("footer");
     expect(footer).toBeInTheDocument();
   });
 });

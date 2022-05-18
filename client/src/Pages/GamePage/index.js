@@ -1,5 +1,16 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { Navbar } from "../../components";
+
+export const LocationDisplay = () => {
+  const location = useLocation();
+
+  return (
+    <div class="location-path-name" data-testid="location-display">
+      {location.pathname}
+    </div>
+  );
+};
 
 const GamePage = () => {
   return (
@@ -29,6 +40,7 @@ const GamePage = () => {
           <div class="answer4">D</div>
         </div>
       </div>
+      <LocationDisplay />
     </>
   );
 };

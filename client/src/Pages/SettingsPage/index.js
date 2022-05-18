@@ -3,17 +3,28 @@ import { Box } from '@mui/system';
 import { Button } from "@mui/material"
 import { Navbar } from "../../components";
 import { Categories, SelectField, difficultyOptions, TextFieldComp, timerOptions, questionsOptions, settingsButtonStyles } from '../../components';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Container, Typography } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
+
+export const LocationDisplay = () => {
+  const location = useLocation();
+
+  return (
+    <div class="location-path-name" data-testid="location-display">
+      {location.pathname}
+    </div>
+  );
+};
 
 const SettingsPage = () => {
   const navigate = useNavigate();
   const [roundSettings, setRoundSettings] = useState([]);
-  
+
   function handleSubmit(e) {
     return e.preventDefault();
   }
+
 
   const updateSettingsField = (index, propertyName) => e => {
     const settings = [...roundSettings];
@@ -65,13 +76,10 @@ const SettingsPage = () => {
             style={settingsButtonStyles}> 
               Play
             </Button>
-
           </form>
-
-
         </Box>
       </Container>
-    
+      <LocationDisplay />
     </>
   );
 };

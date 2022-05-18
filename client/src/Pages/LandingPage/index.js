@@ -1,6 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Footer } from "../../components";
+
+export const LocationDisplay = () => {
+  const location = useLocation();
+
+  return (
+    <div class="location-path-name" data-testid="location-display">
+      {location.pathname}
+    </div>
+  );
+};
 
 const LandingPage = () => {
   // use this to redirect to other pages
@@ -20,18 +30,24 @@ const LandingPage = () => {
             viverra dictumst posuere aliquet sem nullam in diam. Eleifend
             viverra dictumst posuere aliquet sem nullam in diam.
           </h2>
-          <button className="primary-button" onClick={() => navigate("/agree")}>
+          <button
+            aria-label="play-button"
+            className="primary-button"
+            onClick={() => navigate("/agree")}
+          >
             Play
           </button>
           <button
+            aria-label="how-to-play-button"
             className="secondary-button"
             onClick={() => navigate("/rules")}
           >
-            Rules
+            How to Play
           </button>
         </div>
         <Footer />
       </div>
+      <LocationDisplay />
     </>
   );
 };

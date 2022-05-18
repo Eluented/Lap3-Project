@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer aria-label="footer">
       Created and designed by&nbsp;
       <a href="https://github.com/Scralfie" target="_blank">
         Alfred

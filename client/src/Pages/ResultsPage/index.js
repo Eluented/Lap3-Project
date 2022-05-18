@@ -1,6 +1,16 @@
 import React from "react";
 import { Navbar, Results } from "../../components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
+export const LocationDisplay = () => {
+  const location = useLocation();
+
+  return (
+    <div class="location-path-name" data-testid="location-display">
+      {location.pathname}
+    </div>
+  );
+};
 
 const ResultsPage = () => {
   const navigate = useNavigate();
@@ -52,6 +62,7 @@ const ResultsPage = () => {
           <div className="btn-container">
             <button
               id="restartBtn"
+              aria-label="play-again-button"
               className="primary-button"
               onClick={() => navigate("/settings")}
             >
@@ -60,6 +71,7 @@ const ResultsPage = () => {
           </div>
         </div>
       </div>
+      <LocationDisplay />
     </>
   );
 };

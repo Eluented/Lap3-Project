@@ -1,6 +1,16 @@
 import React from "react";
 import { Navbar } from "../../components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+
+export const LocationDisplay = () => {
+  const location = useLocation();
+
+  return (
+    <div class="location-path-name" data-testid="location-display">
+      {location.pathname}
+    </div>
+  );
+};
 
 const RulesPage = () => {
   const navigate = useNavigate();
@@ -47,6 +57,7 @@ const RulesPage = () => {
           </div>
         </div>
       </div>
+      <LocationDisplay />
     </>
   );
 };

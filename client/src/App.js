@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import {
   GamePage,
   LandingPage,
@@ -9,6 +9,12 @@ import {
   RulesPage,
   SettingsPage,
 } from "./pages";
+
+export const LocationDisplay = () => {
+  const location = useLocation();
+
+  return <div data-testid="location-display">{location.pathname}</div>;
+};
 
 function App() {
   return (
