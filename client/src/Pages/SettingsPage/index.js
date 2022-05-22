@@ -51,6 +51,7 @@ const SettingsPage = () => {
 
   //getting categories from redux
   const allCategories = useSelector(categories);
+  const slicedCategories = allCategories.slice(24)
 
   // declaring values for the form
   const [form, setFormValue] = useState({
@@ -59,8 +60,8 @@ const SettingsPage = () => {
     numOfQuestions: 10,
     timer: 15,
     player1: "",
-    player2: "",
-  });
+    player2: ""
+  })
 
   // each time something changes in the form it will find the key by name and set the value
   const changeHandler = (e) => {
@@ -73,9 +74,17 @@ const SettingsPage = () => {
   }
 
 
+  if (form.player1.length === 0){
+    setFormValue({...form, player1: "User 1"})
+  }
+
+  if (form.player2.length === 0){
+    setFormValue({...form, player2: "User 2"})
+  }
 
   const startGame = (e) => {
     e.preventDefault();
+
     dispatch(updateRoundSettings(form));
     dispatch(fetchQuestions(form));
     navigate("/game");
@@ -97,7 +106,7 @@ const SettingsPage = () => {
             How to Play
           </h4>
 
-          {allCategories.length === 0 ? <h1>Loading ...</h1> :
+          {slicedCategories.length === 0 ? <h1>Loading ...</h1> :
             <Box mt={3} width="100%">
               <FormControl fullWidth>
                 <InputLabel>Categories</InputLabel>
@@ -107,7 +116,7 @@ const SettingsPage = () => {
                   label="Categories"
                   onChange={changeHandler}
                 >
-                  {allCategories.map(({ name, id }) => (
+                  {slicedCategories.map(({ name, id }) => (
                     <MenuItem value={id} key={id}>
                       {name}
                     </MenuItem>

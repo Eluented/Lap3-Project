@@ -218,15 +218,20 @@ const GamePage = () => {
         </div>
 
         <div className="question">
-          {questionsStatus === "fulfilled" ? 
-          decode(allQuestions[currentQuestion - 1].question) 
-          : 
+          {questionsStatus === "loading" ? 
           <h1>Loading...</h1>
+          : 
+          decode(allQuestions[currentQuestion - 1].question) 
           }
         </div>
         <div className="answers-container">
-          {questionsStatus === "fulfilled" ? 
-          options.map((data, id) => (
+          {questionsStatus === "loading" ? 
+          <Box mt={20}>
+          {" "}
+          <CircularProgress size={150} />{" "}
+          </Box>
+           : 
+           options.map((data, id) => (
             <div
               className={`answer${id + 1}`}
               onClick={handleClickAnswer}
@@ -235,11 +240,6 @@ const GamePage = () => {
               {decode(data)}
             </div>
           ))
-           : 
-           <Box mt={20}>
-           {" "}
-           <CircularProgress size={150} />{" "}
-           </Box>
           }
         </div>
       </div>
