@@ -1,11 +1,12 @@
 import React from "react";
+import logo from "./quizzical.png"
 
 const Navbar = () => {
   return (
     <header>
       <a href="/">
         <img
-          src="../../images/quizzical.png"
+          src={logo}
           className="Navbar-logo"
           alt="Quizzical Logo"
         />

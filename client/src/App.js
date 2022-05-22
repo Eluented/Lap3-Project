@@ -8,7 +8,7 @@ import {
   ResultsPage,
   RulesPage,
   SettingsPage,
-} from "./pages";
+} from "./Pages";
 
 function App() {
   return (

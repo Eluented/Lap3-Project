@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Footer } from "../../components";
+import drunk from "./drunk.png"
 
 const NotFoundPage = () => {
   return (
@@ -9,7 +10,7 @@ const NotFoundPage = () => {
         <h1>ERROR 404 - Page not found</h1>
         <img
           id="drinkMan"
-          src="../images/drunk.png"
+          src={drunk}
           alt="Animated drunk man"
           width="45%"
         ></img>

@@ -14,19 +14,20 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif !important;
   background-color: var(--primary-blue-light);
+  color: var(--primary-blue-very-dark);
 }
 
 .primary-button,
 .secondary-button {
   color: var(--primary-blue-very-dark);
-  width: 60%;
+  width: 60% !important;
   height: 80px;
-  font-weight: 700;
+  font-weight: 700 !important;
   display: block;
   border: none;
-  font-size: 30px;
+  font-size: 30px !important;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 
 .primary-button {
@@ -81,12 +82,23 @@ header {
   max-width: 570px;
   text-align: center;
 }
+#beer-container {
+  display: flex;
+}
 
+#beer-container img {
+  margin: 10px;
+}
+
+#reverse-beer {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 footer {
   color: var(--primary-blue-light);
   background-color: var(--primary-blue);
   position: fixed;
-  bottom: 0;
+  bottom: 2%;
   width: 100%;
   text-align: center;
 }
@@ -108,19 +120,20 @@ footer a {
 #beforeYouStart-heading {
   font-size: 64px;
   text-align: center;
-  padding-top: 1%;
+  margin-top: 1%;
 }
 
 #beforeYouStart-terms {
   font-size: 32px;
   font-weight: 500;
   padding-top: 1%;
-  width: 55%;
+  max-width: 70%;
 }
 
 #beforeYouStart-terms i {
   padding-right: 5%;
 }
+
 #beforeYouStart-terms p {
   padding-top: 2%;
   padding-bottom: 2%;
@@ -132,13 +145,37 @@ footer a {
 
 /***************************************************************************************/
 /* SettingsPage */
+.settings-container {
+  padding-top: 2%;
+  padding-bottom: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.quiz-settings-title {
+  font-size: 64px;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.quiz-settings-rules-link {
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Poppins", sans-serif !important;
+}
 
 /***************************************************************************************/
 /* GamePage */
-.timer {
-  width: 100%;
-  background-color: #c6c1c1;
-  position: relative;
+.progress-bar {
+  background-color: var(--secondary-pink) !important;
+  border-radius: 0 !important;
+  height: 1.5rem !important;
+  color: var(--primary-blue-light);
 }
 
 .remaining-time-line {
@@ -191,7 +228,7 @@ footer a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   width: 500px;
@@ -214,11 +251,19 @@ footer a {
 
 .answer1,
 .answer4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--secondary-yellow);
+  text-align: center;
 }
 
 .answer2,
 .answer3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background-color: var(--secondary-pink);
   color: var(--primary-blue-light);
 }
@@ -237,6 +282,9 @@ footer a {
 
 #winners-crown {
   position: absolute;
+  z-index: 0;
+  left: 45%;
+  top: 35.5%;
 }
 
 #restartBtn {
@@ -247,6 +295,7 @@ footer a {
 
 #results-container {
   display: flex;
+  margin-top: 4%;
 }
 
 #results-container div {
@@ -274,6 +323,7 @@ footer a {
 }
 
 #winner-container {
+  z-index: 1;
   background-color: var(--secondary-yellow);
   margin: 50px;
 }
@@ -286,9 +336,21 @@ footer a {
 
 /***************************************************************************************/
 /* RulesPage */
+#rulesPage-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#rulesPage-section p {
+  width: 60%;
+  font-size: 18px;
+}
+
 #rules-heading {
   font-size: 64px;
   font-weight: 700;
+  margin-top: 1%;
 }
 
 .btn-container {
@@ -304,7 +366,7 @@ footer a {
 }
 
 #rules-list {
-  font-size: 24px;
+  font-size: 2em;
 }
 
 /***************************************************************************************/
@@ -325,19 +387,6 @@ footer a {
 }
 
 /***************************************************************************************/
-/* RulesPage */
-#RulesPage-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#rules-heading {
-  font-size: 64px;
-  font-weight: 700;
-}
-
-/***************************************************************************************/
 /* Responsive Styling */
 @media screen and (min-width: 700px) {
   .responsive-para {
@@ -352,9 +401,9 @@ footer a {
   }
   .primary-button,
   .secondary-button {
-    width: 50%;
-    height: 50px;
-    font-size: 16px;
+    width: 50% !important;
+    height: 50px !important;
+    font-size: 16px !important;
   }
 
   header {
@@ -384,7 +433,7 @@ footer a {
   /* RulesPage */
   #rules-heading {
     font-size: 32px;
-    padding-top: 10px;
+
   }
 
   #back-btn {
@@ -393,7 +442,7 @@ footer a {
   }
 
   #rules-list {
-    font-size: 16px;
+    font-size: 1.5em;
   }
 
   /* BeforeYouStartPage */
@@ -402,7 +451,7 @@ footer a {
   }
 
   #beforeYouStart-terms {
-    font-size: 18px;
+    font-size: 1.8em;
   }
 
   /* GamePage */
@@ -412,6 +461,27 @@ footer a {
     flex-direction: column;
   }
 
+  /* SettingsPage */
+  .settings-container {
+    padding-top: 2%;
+    padding-bottom: 5%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+
+  .quiz-settings-title {
+    font-size: 32px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+
+  .question-number {
+    font-size: larger;
+  }
+
+  .quiz-setting-rules-link {
+    font-size: 16px !important;
+  }
   .players {
     display: flex;
     justify-content: center;
@@ -435,7 +505,7 @@ footer a {
   .question {
     text-align: center;
     margin-top: 60px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .answers-container {
@@ -498,4 +568,8 @@ footer a {
   #restartBtn {
     width: 50%;
   }
+}
+
+.location-path-name {
+  display: none;
 }

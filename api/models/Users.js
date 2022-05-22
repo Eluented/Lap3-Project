@@ -41,8 +41,6 @@ class User {
           score: score
         };
 
-        console.log(newUser);
-
         const createUser = await db
           .collection('users')
           .insertOne(newUser);
