@@ -106,7 +106,7 @@ const SettingsPage = () => {
             How to Play
           </h4>
 
-          {allCategories.length === 0 ? <h1>Loading ...</h1> :
+          {categoryStatus === "loading" ? <h1>Loading ...</h1> :
             <Box mt={3} width="100%">
               <FormControl fullWidth>
                 <InputLabel>Categories</InputLabel>
