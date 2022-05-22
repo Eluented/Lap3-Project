@@ -51,7 +51,6 @@ const SettingsPage = () => {
 
   //getting categories from redux
   const allCategories = useSelector(categories);
-  const slicedCategories = allCategories.slice(24)
 
   // declaring values for the form
   const [form, setFormValue] = useState({
@@ -106,7 +105,11 @@ const SettingsPage = () => {
             How to Play
           </h4>
 
-          {categoryStatus === "loading" ? <h1>Loading ...</h1> :
+          {categoryStatus === "loading" ? 
+            <Box sx={{display:"flex", justifyContent:"center"}}>
+            <CircularProgress size={20} />
+            </Box > :
+
             <Box mt={3} width="100%">
               <FormControl fullWidth>
                 <InputLabel>Categories</InputLabel>
@@ -116,7 +119,7 @@ const SettingsPage = () => {
                   label="Categories"
                   onChange={changeHandler}
                 >
-                  {slicedCategories.map(({ name, id }) => (
+                  {allCategories.map(({ name, id }) => (
                     <MenuItem value={id} key={id}>
                       {name}
                     </MenuItem>
